@@ -10,7 +10,7 @@ public class DemoApplication {
     String api2() {
     	  return "{"
     	  		+ "'api':'RESTful',"
-    	  		+ "'rules':['r1','r2]}";
+    	  		+ "'rules':['r1','r2']}";
     }
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
