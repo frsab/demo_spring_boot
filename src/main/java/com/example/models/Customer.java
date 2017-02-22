@@ -8,6 +8,10 @@ public class Customer {
     public String id;
 
     public String firstName;
+	public String lastName;
+    public String square;
+    
+    
     public String getId() {
 		return id;
 	}
@@ -32,20 +36,29 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public String lastName;
+
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(String firstName, String lastName,String square) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.square=square;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%s, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+                "Customer[id=%s, firstName='%s', lastName='%s, square='%s']",
+                id, firstName, lastName,square);
     }
+
+	public String getSquare() {
+		return square;
+	}
+
+	public void setSquare(String square) {
+		this.square = square;
+	}
 
 }

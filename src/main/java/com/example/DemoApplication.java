@@ -13,7 +13,7 @@ import com.example.models.CustomerRepository;
 public class DemoApplication implements CommandLineRunner{
 	@Autowired
 	private CustomerRepository repository;
-	
+
 	@RequestMapping("/api2/")
     String api2() {
     	  return "{"
@@ -25,23 +25,30 @@ public class DemoApplication implements CommandLineRunner{
 	}
 	@Override
 	public void run(String... arg0) throws Exception {
-		System.out.println(" je suis dans la methode run "
+		System.out.println("repository"+repository.toString()+" je suis dans la methode run "
 				+ "(DemoApplication implements CommandLineRunner)");
 		repository.deleteAll();
-
+		System.out.println("repository"+repository);
 		// save a couple of customers
-		repository.save(new Customer("Alice", "Smith"));
-		repository.save(new Customer("Bob", "Smith"));
+		repository.save(new Customer("Alice", "Smith","Pessac"));
+		repository.save(new Customer("Bob", "Smith","Cenon"));
 
 		// fetch all customers
 		System.out.println("Customers found with findAll():");
 		System.out.println("-------------------------------");
 		for (Customer customer : repository.findAll()) {
 			System.out.println(customer);
+		}		
+		System.out.println("repository"+repository);
+		for (Customer customer : repository.findAll()) {
+			System.out.println(customer);
 		}
 		System.out.println();
 
 		// fetch an individual customer
+		System.out.println("Customer found with findBySquare('Pessac'):");
+		System.out.println("--------------------------------");
+		System.out.println(repository.findBySquare("Pessac"));
 		System.out.println("Customer found with findByFirstName('Alice'):");
 		System.out.println("--------------------------------");
 		System.out.println(repository.findByFirstName("Alice"));
