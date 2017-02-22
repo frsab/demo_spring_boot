@@ -26,6 +26,27 @@
 
 	<dependencies>
 		<dependency>
+	        <groupId>org.hibernate.javax.persistence</groupId>
+	        <artifactId>hibernate-jpa-2.0-api</artifactId>
+	        <version>1.0.1.Final</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.hibernate.javax.persistence</groupId>
+	        <artifactId>hibernate-jpa-2.0-api</artifactId>
+	        <version>1.0.1.Final</version>
+	    </dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+		<dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-releasetrain</artifactId>
+            <version>Hopper-SR7</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+		<dependency>
 			<!--spring-boot-starter-web Ajoute Tomcat et Spring MVC, 
 			la configuration automatique supposera que vous développez une application Web et configurez Spring en conséquence. -->
 	        <groupId>org.springframework.boot</groupId>
